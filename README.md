@@ -5,6 +5,8 @@
 
 **Live Demo:** [https://ais-pre-bjhxlbtbls5yackjxng426-59681417667.europe-west3.run.app](https://ais-pre-bjhxlbtbls5yackjxng426-59681417667.europe-west3.run.app)
 
+**Video Demo:** [Watch the demo](https://drive.google.com/file/d/1zyOwg1Vgz0POaLuoAIBPdEPci_PSLQrJ/view?usp=drive_link)
+
 ---
 
 ## Overview
