@@ -1,0 +1,6 @@
+{
+  "name": "BeforeBoom",
+  "description": "Notice the signal. Choose your next move. A gentle stress-signal check-in and support space for students navigating study, work, and custom tasks.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

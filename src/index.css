@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #F7F5EF;
+    --card-surface: #FFFEFA;
+    --sage-primary: #7F9B87;
+    --sage-deep: #476652;
+    --accent-lavender: #E8E1F0;
+    --accent-peach: #F3E0D5;
+    --accent-amber: #D99B52;
+    --text-primary: #283C33;
+    --text-secondary: #617068;
+    --border-soft: #DEE5DB;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F7F5EF;
+    color: #283C33;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, .font-serif-gentle {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes gentle-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pet-happy-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  35% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  70% {
+    transform: rotate(360deg) scale(1.05);
+  }
+  85% {
+    transform: translateY(-5px) scale(1.03);
+  }
+  100% {
+    transform: rotate(360deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes pet-anxious-jitter {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  40% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  60% {
+    transform: translateX(-2.5px) rotate(-1.5deg);
+  }
+  80% {
+    transform: translateX(2.5px) rotate(1.5deg);
+  }
+}
+
+@keyframes pet-sad-droop {
+  0%, 100% {
+    transform: translateY(0) scaleY(0.96);
+  }
+  50% {
+    transform: translateY(3px) scaleY(0.92);
+  }
+}
+
+@keyframes pet-tear-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes pet-calm-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.animate-view-enter {
+  animation: gentle-fade-in 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pet-happy {
+  animation: pet-happy-spin 2.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.animate-pet-anxious {
+  animation: pet-anxious-jitter 0.65s ease-in-out infinite;
+}
+
+.animate-pet-sad {
+  animation: pet-sad-droop 2.4s ease-in-out infinite;
+}
+
+.animate-pet-tear {
+  animation: pet-tear-fall 1.4s ease-in infinite;
+}
+
+.animate-pet-calm {
+  animation: pet-calm-breathe 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-view-enter,
+  .animate-pet-happy,
+  .animate-pet-anxious,
+  .animate-pet-sad,
+  .animate-pet-tear,
+  .animate-pet-calm {
+    animation: none !important;
+    transform: none !important;
+  }
+}
