@@ -3,9 +3,7 @@
 > **Notice the signal. Choose your next move.**  
 > **察觉压力信号，自主选择下一步。**
 
-**Live Demo:** [https://ais-pre-bjhxlbtbls5yackjxng426-59681417667.europe-west3.run.app](https://ais-pre-bjhxlbtbls5yackjxng426-59681417667.europe-west3.run.app)
-
-**Video Demo:** [Watch the demo](https://drive.google.com/file/d/1zyOwg1Vgz0POaLuoAIBPdEPci_PSLQrJ/view?usp=drive_link)
+**Live Demo:** [https://beforeboom.ai.studio](https://beforeboom.ai.studio)
 
 ---
 
@@ -34,14 +32,14 @@ BeforeBoom solves this with a **cautious, agency-first 6-stage closed loop**:
 
 ## Role of Gemini (`@google/genai`)
 
-All Gemini calls are executed server-side in `server.ts` using the `@google/genai` SDK (`gemini-3.8-flash`) with deterministic local fallbacks (`src/lib/beforeboomEngine.ts`) so the app remains 100% responsive even offline or under rate limits:
+All Gemini calls are executed server-side in `server.ts` using the `@google/genai` SDK (`gemini-4-argon`) with deterministic local fallbacks (`src/lib/beforeboomEngine.ts`) so the app remains 100% responsive even offline or under rate limits:
 
 1. **Multimodal Signal & Support Router (`POST /api/analyze-signal`)**
    - Uses structured JSON schema output (`responseSchema`) to synthesize recent user transcripts/notes, wearable BPM/HRV deltas against baseline, and camera facial micro-expression cues into cautious, non-diagnostic evidence bullets and a recommended support mode (`Listen`, `Regulate`, or `Plan`).
 2. **Live Camera Facial Micro-Expression Analysis (`POST /api/analyze-face`)**
-   - Analyzes live webcam JPEG frames via `gemini-3.8-flash` multimodal vision to identify observable brow tension, lip curvature, and eye fatigue without diagnostic overreach.
+   - Analyzes live webcam JPEG frames via `gemini-4-argon` multimodal vision to identify observable brow tension, lip curvature, and eye fatigue without diagnostic overreach.
 3. **Live Microphone Audio Transcription (`POST /api/transcribe-audio`)**
-   - Transcribes recorded WebM/MP4 voice snippets via `gemini-3.8-flash` audio understanding when browser Web Speech API is unavailable.
+   - Transcribes recorded WebM/MP4 voice snippets via `gemini-4-argon` audio understanding when browser Web Speech API is unavailable.
 4. **20-Minute Micro-Step Planner (`POST /api/generate-plan`)**
    - Generates structured JSON action cards (`priorityTask`, `next20MinutesAction`, `completionCondition`, `setAsideList`) tailored to the user's active task and supports instant re-scoping into smaller steps.
 5. **Contextual Listen Companion (`POST /api/listen-reply`)**
@@ -71,7 +69,7 @@ All Gemini calls are executed server-side in `server.ts` using the `@google/gena
 
 - **Frontend:** React 19, TypeScript, Tailwind CSS v4, Lucide Icons, Vite 8
 - **Backend:** Node.js (v22+), Express 4 (`server.ts`)
-- **AI SDK:** Google GenAI SDK (`@google/genai` — `gemini-3.8-flash`)
+- **AI SDK:** Google GenAI SDK (`@google/genai` — `gemini-4-argon`)
 - **Testing:** Node.js built-in test runner (`node:test` via `tsx`)
 
 ---
