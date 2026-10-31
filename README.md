@@ -5,6 +5,8 @@
 
 **Live Demo:** [https://beforeboom.ai.studio](https://beforeboom.ai.studio)
 
+**Video Demo:** [Watch the demo](https://drive.google.com/file/d/1zyOwg1Vgz0POaLuoAIBPdEPci_PSLQrJ/view?usp=drive_link)
+
 ---
 
 ## Overview
